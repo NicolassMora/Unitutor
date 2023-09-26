@@ -1,0 +1,53 @@
+INSERT INTO estudiante VALUES ('Nombre del Nuevo Estudiante', 'nuevo_estudiante@example.com', '2023-09-26');
+
+INSERT INTO asignatura VALUES (111(id), 'Nombre de la Nueva Asignatura', 'Profesor Ejemplo');
+
+
+UPDATE estudiante
+SET correoElectronico = 'nuevo_correo@example.com'
+WHERE id_estudiante = 1;
+
+UPDATE asignatura
+SET profesores = 'Nuevo Profesor'
+WHERE id_materia = 1;  
+
+DELETE FROM estudiante
+WHERE id_estudiante = 2;
+
+
+
+DROP TABLE `material de estudio`;
+
+SELECT (Consulta) - Ejemplo de Consulta de Estudiantes y Materias con JOIN:
+
+SELECT e.nombreCompleto AS NombreEstudiante, a.nombre_Materia AS Materia
+FROM estudiante e
+JOIN tutoria t ON e.id_estudiante = t.id_estudiante
+JOIN asignatura a ON t.id_materia = a.id_materia;
+ 
+
+SELECT (Consulta) - Ejemplo de Consulta de Reseñas y Nombres de Tutores con JOIN:
+
+SELECT r.calificacion AS Calificacion, t.nombreCompleto AS NombreTutor
+FROM reseña r
+JOIN tutor t ON r.id_tutor = t.id_tutor;
+
+
+ALTER TABLE estudiante
+MODIFY nombreCompleto varchar(50);
+
+ALTER TABLE estudiante
+ADD COLUMN telefono varchar(15);
+
+
+SELECT * FROM estudiante
+WHERE correoElectronico = 'correo@example.com';
+
+
+SELECT * FROM estudiante
+ORDER BY nombreCompleto;
+
+
+
+
+
